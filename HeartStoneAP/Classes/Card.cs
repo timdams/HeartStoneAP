@@ -13,7 +13,7 @@ namespace HeartStoneAP.Classes
         public string Title { get; set; }
         public string[] Abilities { get; set; } //Todo: dit zal een klasse Ability vereisen
 
-        internal void Draw(int x, int y)
+        internal virtual void Draw(int x, int y)
         {
             string card = @"┌──┬─────┬──┐
 │  │     │  │
@@ -62,6 +62,7 @@ namespace HeartStoneAP.Classes
 
         }
 
+
         private int attack;  //instantievariabele
         public int Attack
         {
@@ -82,6 +83,20 @@ namespace HeartStoneAP.Classes
 
         public CategoryType TribeType { get; set; }
         public string ImagePath { get; set; }
+
+        public Minion Summon()
+        {
+            Minion toSummon = new Minion();
+            toSummon.Abilities = Abilities;
+            toSummon.Attack = Attack;
+            toSummon.CurrentHealth = MaxHealth;
+            toSummon.ImagePath = ImagePath;
+            toSummon.MaxHealth = MaxHealth;
+            toSummon.Tier = Tier;
+            toSummon.Title = Title;
+            toSummon.TribeType = TribeType;
+            return toSummon;
+        }
 
     }
 }

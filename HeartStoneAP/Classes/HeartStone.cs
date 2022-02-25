@@ -8,5 +8,8 @@ namespace HeartStoneAP.Classes
 {
     class HeartStone
     {
+
+    
+        
     }
 }

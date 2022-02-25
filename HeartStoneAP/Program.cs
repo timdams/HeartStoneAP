@@ -15,7 +15,7 @@ namespace HeartStoneAP
             myFirstCard.Attack = 2;
             myFirstCard.TribeType = CategoryType.Murloc;
             myFirstCard.Abilities = new string[] { "BattleCry: Give a friendly Murloc +1/+1" };
-            myFirstCard.Draw(5,5);
+
 
             Card mySecondCard = new Card();
             mySecondCard.Tier = TierType.Tier2;
@@ -24,8 +24,24 @@ namespace HeartStoneAP
             mySecondCard.Attack = 2;
             mySecondCard.TribeType = CategoryType.Demon;
             mySecondCard.Abilities = new string[] { "BattleCry: Give a friendly Demon +2/+2" };
-            mySecondCard.Draw(20, 8);
 
+
+
+            Player tim = new Player();
+            tim.Hand.Add(myFirstCard);
+            tim.Hand.Add(mySecondCard);
+            tim.Hand.Add(myFirstCard);
+            tim.Hand.Add(mySecondCard);
+
+
+            Player ben = new Player();
+            ben.Hand.Add(myFirstCard);
+            ben.Hand.Add(myFirstCard);
+            ben.Hand.Add(myFirstCard);
+            ben.Hand.Add(myFirstCard);
+
+            Playground hs = new Playground(tim,ben);
+            hs.StartBattle();
 
 
             Console.SetCursorPosition(0, Console.WindowHeight);
