@@ -36,6 +36,9 @@ namespace HeartStoneAP
             Player ben = new Player("B");
             ben.Hand.Add(mySecondCard);
             ben.Hand.Add(mySecondCard);
+            ben.Hand.Add(mySecondCard);
+            ben.Hand.Add(mySecondCard);
+
 
 
             Playground hs = new Playground(tim,ben);

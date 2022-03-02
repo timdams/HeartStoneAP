@@ -38,6 +38,8 @@ namespace HeartStoneAP.Classes
 
                 Console.ReadKey();
             }
+            Console.Clear();
+            DrawPlayGround();
             Console.WriteLine("DONZO");
         }
 
