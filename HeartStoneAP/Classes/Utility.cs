@@ -14,7 +14,7 @@ namespace HeartStoneAP.Classes
             Console.WriteLine();
             Console.SetCursorPosition(0, 0);
             Console.WriteLine(p);
-            Console.ReadLine();
+          
         }
     }
 }

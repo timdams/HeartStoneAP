@@ -11,7 +11,7 @@ namespace HeartStoneAP
             Card myFirstCard = new Card();
             myFirstCard.Tier = TierType.Tier1;
             myFirstCard.Title = "Rockpool Hunter";
-            myFirstCard.MaxHealth = 3;
+            myFirstCard.MaxHealth = 8;
             myFirstCard.Attack = 2;
             myFirstCard.TribeType = CategoryType.Murloc;
             myFirstCard.Abilities = new string[] { "BattleCry: Give a friendly Murloc +1/+1" };
@@ -20,7 +20,7 @@ namespace HeartStoneAP
             Card mySecondCard = new Card();
             mySecondCard.Tier = TierType.Tier2;
             mySecondCard.Title = "Nathrezim Overseer";
-            mySecondCard.MaxHealth = 4;
+            mySecondCard.MaxHealth = 9;
             mySecondCard.Attack = 2;
             mySecondCard.TribeType = CategoryType.Demon;
             mySecondCard.Abilities = new string[] { "BattleCry: Give a friendly Demon +2/+2" };
@@ -30,7 +30,9 @@ namespace HeartStoneAP
             Player tim = new Player("A");
             tim.Hand.Add(myFirstCard);
             tim.Hand.Add(myFirstCard);
-
+            tim.Hand.Add(myFirstCard);
+            tim.Hand.Add(myFirstCard);
+            tim.Hand.Add(myFirstCard);
 
 
             Player ben = new Player("B");

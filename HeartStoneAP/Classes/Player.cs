@@ -39,10 +39,18 @@ namespace HeartStoneAP.Classes
             lastAttackIndex++;
         }
 
-        internal void RemoveDead()
+        internal void EndOfTurnCleanUp()
         {
+
+            foreach (var surv in ActiveMinions)
+            {
+                surv.IsDefending = false;
+                surv.IsAttacking = false;
+            }
+
             List<Minion> survivors = new List<Minion>();
             survivors = ActiveMinions.Where(p => !p.IsDead).ToList();
+            
         }
 
         public override string ToString()

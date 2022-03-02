@@ -22,9 +22,12 @@ namespace HeartStoneAP.Classes
         }
 
         public bool IsDead { get; private set; } = false;
-
+        public bool IsAttacking { get; set; }
+        public bool IsDefending { get; set; }
         internal override void Draw(int x, int y)
         {
+            if (IsAttacking) Console.BackgroundColor = ConsoleColor.DarkGreen;
+            else if (IsDefending) Console.BackgroundColor = ConsoleColor.DarkRed;
             base.Draw(x, y);
             //Health
             if (CurrentHealth != MaxHealth)
@@ -55,12 +58,15 @@ namespace HeartStoneAP.Classes
 
         internal void AttackMinion(Player defender)
         {
+            IsAttacking = true;
+
             //Choose random target
             Random rng = new Random();
             var alive = defender.ActiveMinions.Where(p => !p.IsDead).ToList();
             int deftarg = rng.Next(0, alive.Count);
             Minion target =alive[deftarg];
 
+            target.IsDefending = true;
             target.CurrentHealth -= Attack;
             CurrentHealth -= target.Attack;
 

@@ -30,7 +30,11 @@ namespace HeartStoneAP.Classes
                 Console.Clear();
                 DrawPlayGround();
                 Attack(attacker, defender);
-                RemoveDead();
+                
+                Console.Clear();
+                DrawPlayGround();
+
+                EndOfTurnCleanUp();
                 var temp = attacker;
                 attacker = defender;
                 defender = temp;
@@ -43,10 +47,11 @@ namespace HeartStoneAP.Classes
             Console.WriteLine("DONZO");
         }
 
-        private void RemoveDead()
+        private void EndOfTurnCleanUp()
         {
-            playerA.RemoveDead();
-            playerB.RemoveDead();
+            playerA.EndOfTurnCleanUp();
+            playerB.EndOfTurnCleanUp();
+
         }
 
         public bool IsActive
