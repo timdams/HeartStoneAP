@@ -8,9 +8,13 @@ namespace HeartStoneAP.Classes
 {
     class Player
     {
+        public Player(string nameIn)
+        {
+            Name = nameIn;
+        }
         public List<Card> Hand { get; set; } = new List<Card>();
         public List<Minion> ActiveMinions { get; set; } = new List<Minion>();
-
+        public string Name { get;private set; }
         internal void SummonMinions()
         {
             ActiveMinions = new List<Minion>();
@@ -24,18 +28,26 @@ namespace HeartStoneAP.Classes
         private int lastAttackIndex = 0;
         internal void NextAttack(Player defender)
         {
-            if (ActiveMinions.Count == 0) return;
-            if (lastAttackIndex > ActiveMinions.Count)
+            
+            if (ActiveMinions.Count == 0 || ActiveMinions.Count(p=>p.IsDead)== ActiveMinions.Count) return;
+            if (lastAttackIndex >= ActiveMinions.Count)
                 lastAttackIndex = 0;
 
+            Utility.PrintLogMessage($"{Name} attack {defender.Name} with minion no. {lastAttackIndex}");
             ActiveMinions[lastAttackIndex].AttackMinion(defender);
-           
+            
+            lastAttackIndex++;
         }
 
         internal void RemoveDead()
         {
             List<Minion> survivors = new List<Minion>();
             survivors = ActiveMinions.Where(p => !p.IsDead).ToList();
+        }
+
+        public override string ToString()
+        {
+            return $"{Name} (Alive Minions ={ActiveMinions.Count(p => !p.IsDead)})";
         }
     }
 }

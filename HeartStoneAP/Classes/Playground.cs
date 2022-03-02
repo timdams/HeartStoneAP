@@ -51,7 +51,7 @@ namespace HeartStoneAP.Classes
         {
             get
             {
-                return playerA.ActiveMinions.Where(p => !p.IsDead).Count() + playerB.ActiveMinions.Where(p => !p.IsDead).Count() >1;
+                return playerA.ActiveMinions.Where(p => !p.IsDead).Count()>0 && playerB.ActiveMinions.Where(p => !p.IsDead).Count() >0;
             }
         }
 

@@ -27,18 +27,16 @@ namespace HeartStoneAP
 
 
 
-            Player tim = new Player();
+            Player tim = new Player("A");
             tim.Hand.Add(myFirstCard);
-            tim.Hand.Add(mySecondCard);
             tim.Hand.Add(myFirstCard);
-            tim.Hand.Add(mySecondCard);
 
 
-            Player ben = new Player();
-            ben.Hand.Add(myFirstCard);
-            ben.Hand.Add(myFirstCard);
-            ben.Hand.Add(myFirstCard);
-            ben.Hand.Add(myFirstCard);
+
+            Player ben = new Player("B");
+            ben.Hand.Add(mySecondCard);
+            ben.Hand.Add(mySecondCard);
+
 
             Playground hs = new Playground(tim,ben);
             hs.StartBattle();

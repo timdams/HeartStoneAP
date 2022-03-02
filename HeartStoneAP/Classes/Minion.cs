@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace HeartStoneAP.Classes
 {
@@ -39,10 +40,14 @@ namespace HeartStoneAP.Classes
         {
             //Choose random target
             Random rng = new Random();
-            Minion target = defender.ActiveMinions[rng.Next(0, defender.ActiveMinions.Count)];
+            var alive = defender.ActiveMinions.Where(p => !p.IsDead).ToList();
+            int deftarg = rng.Next(0, alive.Count);
+            Minion target =alive[deftarg];
 
             target.CurrentHealth -= Attack;
             CurrentHealth -= target.Attack;
+
+            Utility.PrintLogMessage($"{Title} attacks {target.Title} and deals {Attack}dmg. Target has {target.currentHealth} health left");
         }
     }
 }
