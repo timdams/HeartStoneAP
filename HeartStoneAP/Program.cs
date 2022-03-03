@@ -7,7 +7,9 @@ namespace HeartStoneAP
     {
         static void Main(string[] args)
         {
-            
+
+            HeartStone.PlayGame();
+
             Card myFirstCard = new Card();
             myFirstCard.Tier = TierType.Tier1;
             myFirstCard.Title = "Rockpool Hunter";

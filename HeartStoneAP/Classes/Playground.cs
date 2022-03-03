@@ -18,7 +18,7 @@ namespace HeartStoneAP.Classes
             playerB.SummonMinions();
         }
 
-        public void StartBattle()
+        public Player StartBattle()
         {
 
             (Player attacker, Player defender) = ChooseAttackOrder();
@@ -44,7 +44,14 @@ namespace HeartStoneAP.Classes
             }
             Console.Clear();
             DrawPlayGround();
-            Console.WriteLine("DONZO");
+            return CheckWinner();
+        }
+
+        private Player CheckWinner()
+        {
+            //If draw the human still wins
+            if (playerA.ActiveMinions.Where(p => !p.IsDead).Count() > 0) return playerA;
+            return playerB;
         }
 
         private void EndOfTurnCleanUp()
