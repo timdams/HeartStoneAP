@@ -1,7 +1,16 @@
 ﻿# Flow
 
 * Les 1: nodige klassen. Klasse Card uitgewerkt en gevisualiseerd (``Draw``)
-* Les 2: 
+* Les 2:
+  * Github repo aanmaken 
+		* Werking git
+  * public Card Summon()
+  * Player klasse
+  * Playground klasse  
+* Les 3:
+  * constructors
+  * utility classes
+* Les 4: 
   * Voorstel: basic gevecht simuleren
     1. Ieder speler krijgt prefab hand met kaarten (``List<Card>``)
     2. Minions van hand worden "op speelveld" gesummoned
