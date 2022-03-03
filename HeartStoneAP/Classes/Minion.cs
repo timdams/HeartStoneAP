@@ -56,15 +56,11 @@ namespace HeartStoneAP.Classes
             }
         }
 
-        internal void AttackMinion(Player defender)
+        internal void AttackMinion(Minion target)
         {
             IsAttacking = true;
 
-            //Choose random target
-            Random rng = new Random();
-            var alive = defender.ActiveMinions.Where(p => !p.IsDead).ToList();
-            int deftarg = rng.Next(0, alive.Count);
-            Minion target =alive[deftarg];
+            
 
             target.IsDefending = true;
             target.CurrentHealth -= Attack;

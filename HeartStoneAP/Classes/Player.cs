@@ -34,9 +34,21 @@ namespace HeartStoneAP.Classes
                 lastAttackIndex = 0;
 
             Utility.PrintLogMessage($"{Name} attack {defender.Name} with minion no. {lastAttackIndex}");
-            ActiveMinions[lastAttackIndex].AttackMinion(defender);
+
+
+            var target = GetRandomTarget(defender);
+            ActiveMinions[lastAttackIndex].AttackMinion(target);
             
             lastAttackIndex++;
+        }
+
+        private Minion GetRandomTarget(Player defender)
+        {
+            //Choose random target
+            Random rng = new Random();
+            var alive = defender.ActiveMinions.Where(p => !p.IsDead).ToList();
+            int deftarg = rng.Next(0, alive.Count);
+            return alive[deftarg];
         }
 
         internal void EndOfTurnCleanUp()
