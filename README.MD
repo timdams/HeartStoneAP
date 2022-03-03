@@ -1,0 +1,1 @@
+Used in OOP lectures spring 2022 in which we are recreating a (simplified) Hearthstone Battleground game in C# console.
