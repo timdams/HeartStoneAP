@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace HeartStoneAP.Classes
 {
-    class Minion
+    class Minion: Card
     {
+        public int ActualHealth { get; set; } //Todo maak fullprop + IsDood
+
+        public void DoAttack(Minion target)
+        {
+            target.ActualHealth -= Attack;
+            ActualHealth -= target.Attack;
+        }
+
+        
+
     }
 }

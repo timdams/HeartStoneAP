@@ -83,5 +83,22 @@ namespace HeartStoneAP.Classes
         public CategoryType TribeType { get; set; }
         public string ImagePath { get; set; }
 
+        public Minion Summon()
+        {
+            Minion toSpawn = new Minion();
+            toSpawn.Abilities = Abilities;
+            toSpawn.ActualHealth = MaxHealth;
+            toSpawn.Attack = Attack;
+            toSpawn.ImagePath = ImagePath;
+            toSpawn.MaxHealth = MaxHealth;
+            toSpawn.Tier = Tier;
+            toSpawn.Title = "M_"+Title;
+            toSpawn.TribeType = TribeType;
+            return toSpawn;
+
+
+        }
+
+
     }
 }
