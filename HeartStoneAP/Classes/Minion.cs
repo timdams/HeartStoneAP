@@ -8,7 +8,35 @@ namespace HeartStoneAP.Classes
 {
     class Minion: Card
     {
-        public int ActualHealth { get; set; } //Todo maak fullprop + IsDood
+        public Minion(string inTitle, TierType inTier, int actualHealth): base(inTitle, inTier)
+        {
+            ActualHealth = actualHealth;
+        }
+
+        private int actualHealth;
+        public int ActualHealth 
+        {
+            get
+            {
+                return actualHealth;
+            } 
+            set
+            {
+                actualHealth = value;
+
+                if(actualHealth <= 0)
+                {
+                    IsDead = true;
+                }
+                else
+                {
+                    IsDead = false; //Todo: opletten, kan problemen.
+                }
+            }
+        
+        } //Todo maak fullprop + IsDood
+
+        public bool IsDead { get; set; } = false;
 
         public void DoAttack(Minion target)
         {

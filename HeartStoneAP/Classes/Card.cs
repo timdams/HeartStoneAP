@@ -10,6 +10,15 @@ namespace HeartStoneAP.Classes
     //Bron: https://playhearthstone.com/en-gb/battlegrounds/
     class Card
     {
+
+        public Card(string inTitle, TierType inTier )
+        {
+            Title = inTitle;
+            Tier = inTier;
+            //TODO afwerken
+        }
+
+
         public string Title { get; set; }
         public string[] Abilities { get; set; } //Todo: dit zal een klasse Ability vereisen
 

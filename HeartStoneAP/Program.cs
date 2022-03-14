@@ -7,19 +7,17 @@ namespace HeartStoneAP
     {
         static void Main(string[] args)
         {
+            //Huiswerk:
                      
-            Card myFirstCard = new Card(); //playerA
-            myFirstCard.Tier = TierType.Tier1;
-            myFirstCard.Title = "Rockpool Hunter";
+            Card myFirstCard = new Card("Rockpool Hunter", TierType.Tier1); //playerA
             myFirstCard.MaxHealth = 3;
             myFirstCard.Attack = 2;
             myFirstCard.TribeType = CategoryType.Murloc;
             myFirstCard.Abilities = new string[] { "BattleCry: Give a friendly Murloc +1/+1" };
             myFirstCard.Draw(5,5);
 
-            Card mySecondCard = new Card(); //playerB
-            mySecondCard.Tier = TierType.Tier2;
-            mySecondCard.Title = "Nathrezim Overseer";
+            Card mySecondCard = new Card("Nathrezim Overseer", TierType.Tier2); //playerB
+
             mySecondCard.MaxHealth = 4;
             mySecondCard.Attack = 2;
             mySecondCard.TribeType = CategoryType.Demon;
