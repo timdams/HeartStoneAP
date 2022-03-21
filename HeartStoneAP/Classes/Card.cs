@@ -22,7 +22,7 @@ namespace HeartStoneAP.Classes
         public string Title { get; set; }
         public string[] Abilities { get; set; } //Todo: dit zal een klasse Ability vereisen
 
-        internal void Draw(int x, int y)
+        public void Draw(int x, int y)
         {
             string card = @"┌──┬─────┬──┐
 │  │     │  │
@@ -92,9 +92,11 @@ namespace HeartStoneAP.Classes
         public CategoryType TribeType { get; set; }
         public string ImagePath { get; set; }
 
+ 
+
         public Minion Summon()
         {
-            Minion toSpawn = new Minion();
+            Minion toSpawn = new Minion(Title, Tier, MaxHealth);
             toSpawn.Abilities = Abilities;
             toSpawn.ActualHealth = MaxHealth;
             toSpawn.Attack = Attack;
