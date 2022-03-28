@@ -44,7 +44,17 @@ namespace HeartStoneAP.Classes
             ActualHealth -= target.Attack;
         }
 
-        
+        public override void Draw(int x, int y)
+        {
+            base.Draw(x, y);
+
+            //Health
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.SetCursorPosition(x + 10, y + 1);
+            Console.Write(ActualHealth);
+            Console.ResetColor();
+
+        }
 
     }
 }

@@ -22,7 +22,7 @@ namespace HeartStoneAP.Classes
         public string Title { get; set; }
         public string[] Abilities { get; set; } //Todo: dit zal een klasse Ability vereisen
 
-        public void Draw(int x, int y)
+        public virtual void Draw(int x, int y)
         {
             string card = @"┌──┬─────┬──┐
 │  │     │  │

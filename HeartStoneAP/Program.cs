@@ -26,7 +26,7 @@ namespace HeartStoneAP
             humanPlayer.Deck.Add(myFirstCard);
             humanPlayer.Deck.Add(myFirstCard);
             humanPlayer.Deck.Add(myFirstCard);
-            humanPlayer.ShowDeck(2);
+            //humanPlayer.ShowDeck(2);
 
 
             
@@ -36,7 +36,13 @@ namespace HeartStoneAP
             aiPlayer.Deck.Add(mySecondCard);
             aiPlayer.Deck.Add(mySecondCard);
             aiPlayer.Deck.Add(mySecondCard);
-            aiPlayer.ShowDeck(20);
+            //aiPlayer.ShowDeck(20);
+
+            Minion showoff = myFirstCard.Summon();
+            showoff.Draw(5,5);
+            showoff.ActualHealth--;
+            showoff.Draw(25, 5);
+        
 
             Console.ReadKey();
 
